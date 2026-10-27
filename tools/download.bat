@@ -16,18 +16,19 @@ set completedCount=0
 set skippedCount=0
 
 :: Git repositories
-call :DownloadViaGit "Clipper2"        "https://github.com/AngusJohnson/Clipper2.git"         "main"
-call :DownloadViaGit "earcut.hpp"      "https://github.com/mapbox/earcut.hpp.git"             "master"
-call :DownloadViaGit "greatest"        "https://github.com/silentbicycle/greatest.git"        "v1.5.0"
-call :DownloadViaGit "lua"             "https://github.com/lua/lua.git"                       "v5.5.0"
-call :DownloadViaGit "ok_color"        "https://github.com/bottosson/bottosson.github.io.git" "master"
-call :DownloadViaGit "poly2tri"        "https://github.com/jhasse/poly2tri.git"               "master"
-call :DownloadViaGit "SDL"             "https://github.com/libsdl-org/SDL.git"                "main"
-call :DownloadViaGit "SDL_image"       "https://github.com/libsdl-org/SDL_image.git"          "main"
-call :DownloadViaGit "SDL_shadercross" "https://github.com/libsdl-org/SDL_shadercross.git"    "main"
-call :DownloadViaGit "SDL_ttf"         "https://github.com/libsdl-org/SDL_ttf.git"            "main"
-call :DownloadViaGit "tracy"           "https://github.com/wolfpld/tracy.git"                 "v0.13.0"
-call :DownloadViaGit "yyjson"          "https://github.com/ibireme/yyjson.git"                "0.12.0"
+call :DownloadViaGit "Clipper2"           "https://github.com/AngusJohnson/Clipper2.git"             "main"
+call :DownloadViaGit "earcut.hpp"         "https://github.com/mapbox/earcut.hpp.git"                 "master"
+call :DownloadViaGit "greatest"           "https://github.com/silentbicycle/greatest.git"            "v1.5.0"
+call :DownloadViaGit "lua"                "https://github.com/lua/lua.git"                           "v5.5.0"
+call :DownloadViaGit "ok_color"           "https://github.com/bottosson/bottosson.github.io.git"     "master"
+call :DownloadViaGit "open_simplex_noise" "https://github.com/smcameron/open-simplex-noise-in-c.git" "master"
+call :DownloadViaGit "poly2tri"           "https://github.com/jhasse/poly2tri.git"                   "master"
+call :DownloadViaGit "SDL"                "https://github.com/libsdl-org/SDL.git"                    "release-3.4.x"
+call :DownloadViaGit "SDL_image"          "https://github.com/libsdl-org/SDL_image.git"              "release-3.4.x"
+call :DownloadViaGit "SDL_shadercross"    "https://github.com/libsdl-org/SDL_shadercross.git"        "main"
+call :DownloadViaGit "SDL_ttf"            "https://github.com/libsdl-org/SDL_ttf.git"                "release-3.2.x"
+call :DownloadViaGit "tracy"              "https://github.com/wolfpld/tracy.git"                     "v0.13.0"
+call :DownloadViaGit "yyjson"             "https://github.com/ibireme/yyjson.git"                    "0.12.0"
 
 :: Report the outcome
 if %failedCount% gtr 0 (

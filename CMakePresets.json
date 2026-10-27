@@ -1,11 +1,24 @@
 {
   "$schema": "https://cmake.org/cmake/help/latest/_downloads/3e2d73bff478d88a7de0de736ba5e361/schema.json",
-  "version": 10,
-  "cmakeMinimumRequired": {
-    "major": 4,
-    "minor": 0
-  },
+  "version": 8,
   "configurePresets": [
+    {
+      "name": "debug",
+      "inherits": ["release"],
+      "cacheVariables": {
+        "EM_ENABLE_ASSERTING": true,
+        "EM_ENABLE_DEBUGGING": true,
+        "EM_ENABLE_OPTIMIZING": false,
+        "EM_ENABLE_PROFILING": true
+      }
+    },
+    {
+      "name": "profile",
+      "inherits": ["release"],
+      "cacheVariables": {
+        "EM_ENABLE_PROFILING": true
+      }
+    },
     {
       "name": "release",
       "generator": "Ninja",
@@ -17,81 +30,24 @@
         "EM_ENABLE_ASSERTING": false,
         "EM_ENABLE_DEBUGGING": false,
         "EM_ENABLE_OPTIMIZING": true,
-        "EM_ENABLE_PROFILING": false
-      }
-    },
-    {
-      "name": "instrumented",
-      "inherits": ["release"],
-      "cacheVariables": {
-        "EM_ENABLE_PROFILING": true
-      }
-    },
-    {
-      "name": "debug",
-      "inherits": ["release"],
-      "cacheVariables": {
-        "EM_ENABLE_DEBUGGING": true,
-        "EM_ENABLE_OPTIMIZING": false
-      }
-    },
-    {
-      "name": "checked",
-      "inherits": ["debug"],
-      "cacheVariables": {
-        "EM_ENABLE_ASSERTING": true
-      }
-    },
-    {
-      "name": "optimized",
-      "inherits": ["release"],
-      "cacheVariables": {
-        "EM_ENABLE_DEBUGGING": true
-      }
-    },
-    {
-      "name": "profile",
-      "inherits": ["optimized"],
-      "cacheVariables": {
-        "EM_ENABLE_PROFILING": true
-      }
-    },
-    {
-      "name": "analysis",
-      "inherits": ["checked"],
-      "cacheVariables": {
-        "EM_ENABLE_PROFILING": true
+        "EM_ENABLE_PROFILING": false,
+        "EM_PRESET": "${presetName}",
+        "EM_SETUP": "$env{EVER_SDK_ROOT}/cmake/Setup.cmake"
       }
     }
   ],
   "buildPresets": [
     {
-      "name": "release",
-      "configurePreset": "release"
-    },
-    {
-      "name": "instrumented",
-      "configurePreset": "instrumented"
-    },
-    {
       "name": "debug",
       "configurePreset": "debug"
-    },
-    {
-      "name": "checked",
-      "configurePreset": "checked"
-    },
-    {
-      "name": "optimized",
-      "configurePreset": "optimized"
     },
     {
       "name": "profile",
       "configurePreset": "profile"
     },
     {
-      "name": "analysis",
-      "configurePreset": "analysis"
+      "name": "release",
+      "configurePreset": "release"
     }
   ]
 }

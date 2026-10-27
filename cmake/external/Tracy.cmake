@@ -1,6 +1,7 @@
 cmake_policy(SET CMP0077 NEW)
 
 set(TRACY_ENABLE ${EM_ENABLE_PROFILING})
+set(TRACY_ON_DEMAND ${EM_ENABLE_DEBUGGING})
 set(TRACY_LTO ON)
 
 add_subdirectory(
